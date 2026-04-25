@@ -1,0 +1,1 @@
+winget install OpenJS.NodeJS.LTS --silent --accept-source-agreements --accept-package-agreements

@@ -1,0 +1,37 @@
+import std.perf_hooks;
+
+extern PI = Math.PI;
+extern E = Math.E;
+
+extern class FanneiMath {
+    // Calculate the hypotenuse of a right triangle: sqrt(a^2 + b^2)
+    static hypotenuse(a, b) {
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    }
+
+    // Get a random number between a range
+    static randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+});
+
+
+println(`Value of PI: ${PI}`);
+println(`Value of E: ${E}`);
+
+extern sideA = 3;
+extern sideB = 4;
+extern result = FanneiMath.hypotenuse(sideA, sideB);
+
+println.info(`Triangle Sides: ${sideA} and ${sideB}`);
+println(`The Hypotenuse is: ${result}`);
+
+extern negativeVal = -42.75;
+println(`Absolute of ${negativeVal}: ${Math.abs(negativeVal)}`);
+println(`Ceiling: ${Math.ceil(negativeVal)}`);
+println(`Floor: ${Math.floor(negativeVal)}`);
+
+extern roll = FanneiMath.randomInt(1, 6);
+println.warn(`Dice Roll: ${roll}`);
+
+println.info("Math Lab operations finished.");

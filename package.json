@@ -1,0 +1,28 @@
+{
+  "name": "fanneic-app",
+  "version": "1.0.0",
+  "description": "Packaged Node.js Application",
+  "main": "fanneic.js",
+  "scripts": {
+    "build-win": "pkg . --targets node18-win-x64 --output win32/fanneic.exe",
+    "build-mac": "pkg . --targets node18-macos-x64 --output macos/fanneic",
+    "build-linux": "pkg . --targets node18-linux-x64 --output linuxunix/fanneic",
+    "build-all": "npm run build-win && npm run build-mac && npm run build-linux"
+  },
+  "bin": "fanneic.js",
+  "pkg": {
+    "assets": [
+      "views/**/*",
+      "public/**/*",
+      ".env"
+    ],
+    "targets": [
+      "node18-win-x64",
+      "node18-macos-x64",
+      "node18-linux-x64"
+    ]
+  },
+  "dependencies": {
+    "pkg": "^5.8.1"
+  }
+}

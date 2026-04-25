@@ -1,0 +1,13 @@
+import std.readline
+
+extern rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('What is your name in Fannei: ', (answer) => {
+  console.log(`Hello, ${answer}! You are now running .fi code.`);
+  rl.close();
+});
+
+println("Hi")
